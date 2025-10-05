@@ -24,6 +24,7 @@ final ProjectModel projectModel;
           alignment: Alignment.bottomCenter,
           child: projectModel.gitHubLink==null? ElevatedButton(onPressed: ()async{
                 //linkedin
+                
                 await launchUrlFunc(projectModel.linkedinLink);
                 
               },
@@ -35,7 +36,7 @@ final ProjectModel projectModel;
               child: Text("Watch Video",style: AppStyles.semiBold16.copyWith(color: AppColors.primaryColor,fontSize: 14),),)
       
           : Row(
-            spacing: 10,
+            
             children: [
               ElevatedButton(onPressed: ()async{
                 //github
@@ -45,6 +46,7 @@ final ProjectModel projectModel;
               style: ElevatedButton.styleFrom(backgroundColor: AppColors.primaryColor,),
                child: Text('View Project',style: AppStyles.semiBold16.copyWith(color: Colors.white,fontSize: 14),),
                ),
+               SizedBox(width: 10,),
                ElevatedButton(onPressed: ()async{
                 //linkedin
                 await launchUrlFunc(projectModel.linkedinLink);
