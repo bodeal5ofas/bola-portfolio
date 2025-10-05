@@ -61,12 +61,25 @@ class ProjectsSectionMobile extends StatelessWidget {
       slivers: [
                 SliverToBoxAdapter(child: SectionName(firstnane: 'My', secondname: 'Projects',divider: 0.4,)),
         SliverToBoxAdapter(child: SizedBox(height: 20,)),
-        SliverList.builder(itemCount: projects.length,
-          itemBuilder: (context, index) => Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24,vertical: 16),
-           child: 
-            SizedBox(height:MediaQuery.sizeOf(context).height*0.4,
-            child: ProjectWidget(projectModel: projects[index],)),))
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (context, index) => Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+              child: SizedBox(
+                height: MediaQuery.sizeOf(context).height * 0.4,
+                child: ProjectWidget(projectModel: projects[index]),
+              ),
+            ),
+            childCount: projects.length,
+          ),
+        ),
+        // SliverList.builder(itemCount: projects.length,
+        //   itemBuilder: (context, index) => Padding(
+        //     padding: EdgeInsets.symmetric(horizontal: 24,vertical: 16),
+        //    child: 
+        //     SizedBox(height:MediaQuery.sizeOf(context).height*0.4,
+        //     child: ProjectWidget(projectModel: projects[index],)),))
       ]
       //  crossAxisAlignment: CrossAxisAlignment.stretch,
         
