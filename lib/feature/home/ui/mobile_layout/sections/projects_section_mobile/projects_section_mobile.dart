@@ -58,6 +58,7 @@ class ProjectsSectionMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      key: ValueKey(MediaQuery.of(context).size.width),
       slivers: [
                 SliverToBoxAdapter(child: SectionName(firstnane: 'My', secondname: 'Projects',divider: 0.4,)),
         SliverToBoxAdapter(child: SizedBox(height: 20,)),
