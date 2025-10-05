@@ -17,7 +17,7 @@ class DesktopScreen extends StatelessWidget {
   final List<Widget> sections =const [
     HomeSectionDesk(),
     AboutSectionDesk(),
-    SkillsSectionDesk(iteamNum: 3,aspectRatio: 3,),
+    SkillsSectionDesk(iteamNum: 3,aspectRatio: 3,divider: 0.46,),
     ServiceSection(),
     ProjectsSection(),
     ContactSection()
