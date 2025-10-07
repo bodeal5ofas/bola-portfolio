@@ -69,7 +69,11 @@ class ProjectsSectionMobile extends StatelessWidget {
                   const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
               child: SizedBox(
                 height: MediaQuery.sizeOf(context).height * 0.4,
-                child: ProjectWidget(projectModel: projects[index]),
+                child: ProjectWidget(projectModel: projects.elementAtOrNull(index)?? ProjectModel(title: 'Responsive',
+       image: 'assets/responsive_logo.png',
+        gitHubLink: 'https://github.com/bodeal5ofas/responsive_dashboard',
+         linkedinLink: 'https://www.linkedin.com/posts/bola-rafaat-b61a97264_flutter-dart-responsiveabrui-activity-7289047618582683648-AkI9?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEDxxrkBQAlXBo_iW3QLD4bT0zo172HCFGk',
+         ),),
               ),
             ),
             childCount: projects.length,
