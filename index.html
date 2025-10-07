@@ -30,9 +30,29 @@
   <link rel="icon" type="image/png" href="favicon.png"/>
 
   <title>portfolio</title>
-  <link rel="manifest" href="docs/manifest.json">
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>
 </body>
+<style>
+/* إصلاح الموبايل لسكشن المشاريع */
+@media (max-width: 768px) {
+    /* هذه كلاسات عامة في Flutter - جربها كلها */
+    [class*="project"],
+    [class*="Project"],
+    [class*="portfolio"],
+    [class*="Portfolio"],
+    section, div {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* أجبر المحتوى على الظهور */
+    body, html {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
+}
+</style>
 </html>
