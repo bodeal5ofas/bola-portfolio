@@ -6,7 +6,7 @@ import 'package:portfolio/feature/home/ui/mobile_layout/mobile_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-
+//for commit; 
   runApp(const Portfolio());
 }
 

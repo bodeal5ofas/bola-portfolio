@@ -17,7 +17,7 @@ class HomeSectionMobile extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(19.0),
         child: Column(
-          
+          //mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SizedBox(height:  MediaQuery.sizeOf(context).height *0.1,),
