@@ -32,8 +32,26 @@
   <title>portfolio</title>
   <link rel="manifest" href="manifest.json">
 </head>
+<script>
+// حل طارئ للموبايل
+document.addEventListener('DOMContentLoaded', function() {
+    // تأكد أن الصفحة شغالة على موبايل
+    if (window.innerWidth <= 768) {
+        console.log('Mobile device detected');
+        
+        // حاول تجديد الصفحة بعد تحميل Flutter
+        setTimeout(function() {
+            let sections = document.querySelectorAll('section, div');
+            sections.forEach(function(section) {
+                section.style.minHeight = '50px';
+                section.style.overflow = 'visible';
+            });
+        }, 3000);
+    }
+});
+</script>
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+  <script src="flutter_bootstrap.js" defer></script>
 </body>
 <style>
 /* إصلاح الموبايل لسكشن المشاريع */
