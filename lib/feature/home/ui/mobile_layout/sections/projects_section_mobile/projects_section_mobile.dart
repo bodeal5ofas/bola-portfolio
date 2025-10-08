@@ -57,35 +57,46 @@ class ProjectsSectionMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      key: ValueKey(MediaQuery.of(context).size.width),
-      slivers: [
-                SliverToBoxAdapter(child: SectionName(firstnane: 'My', secondname: 'Projects',divider: 0.4,)),
-        SliverToBoxAdapter(child: SizedBox(height: 20,)),
-        SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (context, index) => Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-              child: SizedBox(
-                height: MediaQuery.sizeOf(context).height * 0.4,
-                child: ProjectWidget(projectModel: projects.elementAtOrNull(index)?? ProjectModel(title: 'Responsive',
-       image: 'assets/responsive_logo.png',
-        gitHubLink: 'https://github.com/bodeal5ofas/responsive_dashboard',
-         linkedinLink: 'https://www.linkedin.com/posts/bola-rafaat-b61a97264_flutter-dart-responsiveabrui-activity-7289047618582683648-AkI9?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEDxxrkBQAlXBo_iW3QLD4bT0zo172HCFGk',
-         ),),
-              ),
-            ),
-            childCount: projects.length,
-          ),
-        ),
+    return Image(image:  AssetImage('assets/about_me.png'),fit: BoxFit.fill, );
+    // return Expanded(
+    //   child: Column(children: [
+    //     SectionName(firstnane: 'MY ', secondname: 'Projects',divider: 0.4,),
+    //     SizedBox(height: 20,),
+    //     Expanded(child: ListView.builder(
+    //       itemCount: projects.length,
+    //       itemBuilder: (context, index) => Padding(
+    //         padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 16),
+    //         child: SizedBox(height: MediaQuery.sizeOf(context).height*0.5,child: ProjectWidget(projectModel: projects[index],)),
+    //       ),
+    //     ),),
+    //   ]),
+    // );
+    // return CustomScrollView(
+    //  // key: ValueKey(MediaQuery.of(context).size.width),
+    //   slivers: [
+    //             SliverToBoxAdapter(child: SectionName(firstnane: 'My', secondname: 'Projects',divider: 0.4,)),
+    //     SliverToBoxAdapter(child: SizedBox(height: 20,)),
+    //     SliverList(
+    //       delegate: SliverChildBuilderDelegate(
+    //         (context, index) => Padding(
+    //           padding:
+    //               const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+    //           // child: SizedBox(
+    //           //   height: MediaQuery.sizeOf(context).height * 0.4,
+    //              child:
+    //              ProjectWidget(projectModel: projects[index]),
+    //           ),
+            
+    //         childCount: projects.length,
+    //       ),
+    //     ),
         // SliverList.builder(itemCount: projects.length,
         //   itemBuilder: (context, index) => Padding(
         //     padding: EdgeInsets.symmetric(horizontal: 24,vertical: 16),
         //    child: 
         //     SizedBox(height:MediaQuery.sizeOf(context).height*0.4,
         //     child: ProjectWidget(projectModel: projects[index],)),))
-      ]
+    //  ]
       //  crossAxisAlignment: CrossAxisAlignment.stretch,
         
         // SizedBox(
@@ -110,6 +121,6 @@ class ProjectsSectionMobile extends StatelessWidget {
         
         
       
-    );
+    
   }
 }
