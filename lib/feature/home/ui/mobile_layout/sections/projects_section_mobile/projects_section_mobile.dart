@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:portfolio/core/utils/app_styles.dart';
 import 'package:portfolio/core/widgets/section_name.dart';
 import 'package:portfolio/feature/home/ui/desktop_layout/sections/projects_section/models/project_model.dart';
 import 'package:portfolio/feature/home/ui/desktop_layout/sections/projects_section/widgets/project_widget.dart';
@@ -57,7 +59,9 @@ class ProjectsSectionMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image(image:  AssetImage('assets/about_me.png'),fit: BoxFit.fill, );
+    return Text('Updates',style: AppStyles.bold20.copyWith(
+      color: Colors.white
+    ),);
     // return Expanded(
     //   child: Column(children: [
     //     SectionName(firstnane: 'MY ', secondname: 'Projects',divider: 0.4,),
