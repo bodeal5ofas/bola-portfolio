@@ -8,8 +8,8 @@ import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactMethod extends StatelessWidget {
-  const ContactMethod({super.key});
-
+  const ContactMethod({super.key, required this.isMobile});
+final bool isMobile;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -48,7 +48,12 @@ class ContactMethod extends StatelessWidget {
               ),),
 
               ElevatedButton(onPressed: (){
-                context.read<DeskProvider>().setCurrentIndex(5);
+            isMobile    ?  Scrollable.ensureVisible(
+      context.read<DeskProvider>().contactKey.currentContext!,
+      duration: Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
+    )
+               : context.read<DeskProvider>().setCurrentIndex(5);
               }, 
               style: ElevatedButton.styleFrom(backgroundColor: AppColors.secondaryColor,
               side:BorderSide(color: AppColors.primaryColor),

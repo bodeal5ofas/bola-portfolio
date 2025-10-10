@@ -36,14 +36,16 @@ final ProjectModel projectModel;
               child: Text("Watch Video",style: AppStyles.semiBold16.copyWith(color: AppColors.primaryColor,fontSize: 14),),)
       
           : Row(
-            
+          mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(onPressed: ()async{
                 //github
                 await launchUrlFunc(projectModel.gitHubLink!);
                 
               },
-              style: ElevatedButton.styleFrom(backgroundColor: AppColors.primaryColor,),
+              style: ElevatedButton.styleFrom(backgroundColor: AppColors.primaryColor,
+              padding: EdgeInsets.all(5),
+              ),
                child: Text('View Project',style: AppStyles.semiBold16.copyWith(color: Colors.white,fontSize: 14),),
                ),
                SizedBox(width: 10,),
@@ -55,7 +57,7 @@ final ProjectModel projectModel;
               style: ElevatedButton.styleFrom(backgroundColor: AppColors.secondaryColor,
               side:BorderSide(color: AppColors.primaryColor),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),),
-              
+              padding: EdgeInsets.all(5),
               ),
               child: Text("Watch Video",style: AppStyles.semiBold16.copyWith(color: AppColors.primaryColor,fontSize: 14),),),
             ],

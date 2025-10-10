@@ -6,8 +6,9 @@ import 'package:portfolio/feature/home/ui/desktop_layout/view_model/cubit/desk_p
 import 'package:provider/provider.dart';
 
 class ServiceWidget extends StatelessWidget {
-  const ServiceWidget({super.key, required this.title, required this.subTitle});
+  const ServiceWidget({super.key, required this.title, required this.subTitle, required this.isMobile,});
 final String title,subTitle;
+final bool isMobile;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,7 +25,12 @@ final String title,subTitle;
           Text(subTitle,style: AppStyles.semiBold16.copyWith(color: AppColors.lightGreyColor,fontSize: 14,fontWeight: FontWeight.w500),),
           SizedBox(height: 30,),
           ElevatedButton(onPressed: (){
-            context.read<DeskProvider>().setCurrentIndex(5);
+         isMobile?     Scrollable.ensureVisible(
+      context.read<DeskProvider>().contactKey.currentContext!,
+      duration: Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
+    )
+            :context.read<DeskProvider>().setCurrentIndex(5);
           }, style: ElevatedButton.styleFrom(backgroundColor: AppColors.primaryColor,),child: Text("Hire Me",style: AppStyles.semiBold16.copyWith(color: Colors.white),),)
         ],),
     );

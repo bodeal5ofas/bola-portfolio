@@ -23,7 +23,7 @@ class HomeSectionDesk extends StatelessWidget {
               SizedBox(height:  MediaQuery.sizeOf(context).height *0.1,),
               HomeInfoDesk(),
               SizedBox(height: 15,),
-              ContactMethod()
+              ContactMethod(isMobile: false,)
             ],
           ),
          AnimatedImage(),

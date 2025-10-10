@@ -44,7 +44,7 @@ final GlobalKey scrollKey ;
             ),
           ),
           SizedBox(height:  MediaQuery.sizeOf(context).height *0.05,),
-          ContactMethod(),
+          ContactMethod(isMobile: true,),
           ],
         ),
       );

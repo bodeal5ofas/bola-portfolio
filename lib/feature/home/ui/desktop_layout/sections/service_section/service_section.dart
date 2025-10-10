@@ -17,15 +17,15 @@ class ServiceSection extends StatelessWidget {
             spacing: 10,
             children: [
               Expanded(
-                child: ServiceWidget(title: "Software Engineering", 
+                child: ServiceWidget(title: "Software Engineering", isMobile: false,
                 subTitle: 'I provide end-to-end software solutions tailored to business and individual needs. From requirements analysis and system design to development, I apply OOP principles and Clean Architecture to deliver scalable, high-quality, and maintainable software.'),
               ),
             Expanded(
-              child: ServiceWidget(title: 'Mobile App Development',
+              child: ServiceWidget(title: 'Mobile App Development',isMobile: false,
                subTitle: 'I develop high-performance mobile applications using Flutter, seamlessly running on both iOS and Android. My focus is on delivering outstanding user experiences, responsive UI design, and integrating apps with databases, RESTful APIs, and Firebase services like authentication.'),
             )
            ,Expanded(
-             child: ServiceWidget(title: 'Career Branding & Professional Profiles',
+             child: ServiceWidget(title: 'Career Branding & Professional Profiles',isMobile: false,
               subTitle: 'I help individuals build their professional brand by creating ATS-friendly CVs, optimizing LinkedIn profiles to attract recruiters, and designing impressive Portfolios that showcase skills, projects, and achievements in a professional way.'),
            )
             ],

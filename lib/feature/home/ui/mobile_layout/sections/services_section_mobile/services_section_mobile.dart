@@ -34,11 +34,11 @@ final GlobalKey scrollKey ;
                     scrollDirection: Axis.horizontal,
                      controller: context.read<DeskProvider>().service_controller,
                      children: [
-                      ServiceWidget(title: "Software Engineering", 
+                      ServiceWidget(title: "Software Engineering", isMobile: true,
                     subTitle: 'I provide end-to-end software solutions tailored to business and individual needs. From requirements analysis and system design to development, I apply OOP principles and Clean Architecture to deliver scalable, high-quality, and maintainable software.'),
-                         ServiceWidget(title: 'Mobile App Development',
+                         ServiceWidget(title: 'Mobile App Development',isMobile: true,
                           subTitle: 'I develop high-performance mobile applications using Flutter, seamlessly running on both iOS and Android. My focus is on delivering outstanding user experiences, responsive UI design, and integrating apps with databases, RESTful APIs, and Firebase services like authentication.'),
-                    ServiceWidget(title: 'Career Branding & Professional Profiles',
+                    ServiceWidget(title: 'Career Branding & Professional Profiles',isMobile: true,
                      subTitle: 'I help individuals build their professional brand by creating ATS-friendly CVs, optimizing LinkedIn profiles to attract recruiters, and designing impressive Portfolios that showcase skills, projects, and achievements in a professional way.')
                     
                      ],
