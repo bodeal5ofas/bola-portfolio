@@ -41,13 +41,15 @@ final bool isMobile;
               },
               
               style: TextButton.styleFrom(backgroundColor: AppColors.primaryColor,
+              side:BorderSide(color: Colors.white),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),),),
+              
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Text("Download CV",style: AppStyles.semiBold16.copyWith(color: Colors.white),),
               ),),
 
-              ElevatedButton(onPressed: (){
+              TextButton(onPressed: (){
             isMobile    ?  Scrollable.ensureVisible(
       context.read<DeskProvider>().contactKey.currentContext!,
       duration: Duration(milliseconds: 500),
@@ -55,8 +57,9 @@ final bool isMobile;
     )
                : context.read<DeskProvider>().setCurrentIndex(5);
               }, 
-              style: ElevatedButton.styleFrom(backgroundColor: AppColors.secondaryColor,
+              style: TextButton.styleFrom(backgroundColor: AppColors.secondaryColor,
               side:BorderSide(color: AppColors.primaryColor),
+
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30),),
               
               ),
