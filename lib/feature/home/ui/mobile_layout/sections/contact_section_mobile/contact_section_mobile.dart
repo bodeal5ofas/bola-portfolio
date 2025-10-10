@@ -7,12 +7,14 @@ import 'package:portfolio/feature/home/ui/desktop_layout/sections/contact_sectio
 import 'package:portfolio/feature/home/ui/desktop_layout/sections/contact_section/widgets/send_message_widget.dart';
 
 class ContactSectionMobile extends StatelessWidget {
-  const ContactSectionMobile({super.key});
-
+  const ContactSectionMobile({super.key, required this.scrollKey});
+final GlobalKey scrollKey ;
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
+    return //SingleChildScrollView(
+     // child:
+       Padding(
+        key: scrollKey,
         padding: const EdgeInsets.all(16.0),
         child: Column(children: [
             SectionName(firstnane: 'Contact', secondname: 'Me',divider: 0.4,),
@@ -50,7 +52,7 @@ class ContactSectionMobile extends StatelessWidget {
                 ],
               ),),
           ],),
-      ),
-    );
+      );
+   // );
   }
 }

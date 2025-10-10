@@ -15,22 +15,25 @@ import 'package:portfolio/feature/home/ui/mobile_layout/widgets/custom_drawer.da
 import 'package:provider/provider.dart';
 //import 'package:portfolio/feature/home/ui/mobile_layout/sections/home_section/widgets/menu_button.dart';
 
-class MobileScreen extends StatefulWidget {
+// class MobileScreen extends StatefulWidget {
+//   const MobileScreen({super.key});
+
+//   @override
+//   State<MobileScreen> createState() => _MobileScreenState();
+// }
+
+//class _MobileScreenState extends State<MobileScreen> {
+class MobileScreen extends StatelessWidget{
   const MobileScreen({super.key});
-
-  @override
-  State<MobileScreen> createState() => _MobileScreenState();
-}
-
-class _MobileScreenState extends State<MobileScreen> {
-  final List<Widget> sections =const [
-    HomeSectionMobile(),
-    AboutSectionMobile(),
-    SkillsSectionMobile(),
-    ServicesSectionMobile(),
-    ProjectsSectionMobile(),
-    ContactSectionMobile(),
-  ];
+  
+  // final List<Widget> sections =const [
+  //   HomeSectionMobile(),
+  //   AboutSectionMobile(),
+  //   SkillsSectionMobile(),
+  //   ServicesSectionMobile(),
+  //   ProjectsSectionMobile(),
+  //   ContactSectionMobile(),
+  // ];
   @override
   Widget build(BuildContext context) {
   // log(MediaQuery.sizeOf(context).width.toString());
@@ -52,14 +55,20 @@ class _MobileScreenState extends State<MobileScreen> {
           //   MenuButton(),
           // ],
         ),
-        body: sections[context.watch<DeskProvider>().currentIndex],
-        // body: SingleChildScrollView(
-        //   child: Column(
-        //     children: [
-        //   HomeSectionMobile(),
-        //     ],
-        //   ),
-        // ),
+      //  body: sections[context.watch<DeskProvider>().currentIndex],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+    HomeSectionMobile(scrollKey: context.read<DeskProvider>().homeKey,),
+    AboutSectionMobile(scrollKey: context.read<DeskProvider>().aboutKey,),
+    SkillsSectionMobile(scrollKey: context.read<DeskProvider>().skillsKey,),
+    ServicesSectionMobile(scrollKey: context.read<DeskProvider>().serviceKey,),
+    SizedBox(height: 16,),
+    ProjectsSectionMobile(scrollKey: context.read<DeskProvider>().projectsKey,),
+    ContactSectionMobile(scrollKey: context.read<DeskProvider>().contactKey,),
+            ],
+          ),
+        ),
       ),
     );
   }

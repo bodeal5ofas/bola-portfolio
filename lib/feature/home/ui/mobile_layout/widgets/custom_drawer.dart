@@ -29,36 +29,51 @@ class CustomDrawer extends StatelessWidget {
             const SizedBox(height: 16,),
             SectionIcon(icon: Icons.home_outlined, title: 'Home',onTap: () {
               //pop
-              Navigator.pop(context);
-              context.read<DeskProvider>().setCurrentIndex(0);
+              animatescroll(context.read<DeskProvider>().homeKey.currentContext!);
+              //context.read<DeskProvider>().setCurrentIndex(0);
             },),
             const SizedBox(height: 10,),
             SectionIcon(icon: Icons.person, title: 'About',onTap: () {
-              Navigator.pop(context);
-              context.read<DeskProvider>().setCurrentIndex(1);
+              animatescroll(context.read<DeskProvider>().aboutKey.currentContext!);
+              // Navigator.pop(context);
+              
+              // context.read<DeskProvider>().setCurrentIndex(1);
             },),
             const SizedBox(height: 10,),
             SectionIcon(icon: Icons.account_tree, title: 'Skills',onTap: () {
-              Navigator.pop(context);
-              context.read<DeskProvider>().setCurrentIndex(2);
+             animatescroll( context.read<DeskProvider>().skillsKey.currentContext!);
+              // Navigator.pop(context);
+              // context.read<DeskProvider>().setCurrentIndex(2);
             },),
             const SizedBox(height: 10,),
             SectionIcon(icon: Icons.work, title: 'Services',onTap: () {
-              Navigator.pop(context);
-              context.read<DeskProvider>().setCurrentIndex(3);
+            animatescroll(context.read<DeskProvider>().serviceKey.currentContext!);
+              // Navigator.pop(context);
+              // context.read<DeskProvider>().setCurrentIndex(3);
             },),
             const SizedBox(height: 10,),
             SectionIcon(icon: Icons.folder_open, title: 'Projects',onTap: () {
-              Navigator.pop(context);
-              context.read<DeskProvider>().setCurrentIndex(4);
+              // Navigator.pop(context);
+              // context.read<DeskProvider>().setCurrentIndex(4);
+            animatescroll(context.read<DeskProvider>().projectsKey.currentContext!);
             },),
             const SizedBox(height: 10,),
             SectionIcon(icon: Icons.phone, title: 'Contact',onTap: () {
-              Navigator.pop(context);
-              context.read<DeskProvider>().setCurrentIndex(5);
+              animatescroll(context.read<DeskProvider>().contactKey.currentContext!);
+              // Navigator.pop(context);
+              // context.read<DeskProvider>().setCurrentIndex(5);
             },),
         ],
       ),
+    );
+  }
+
+  void animatescroll(BuildContext context) {
+        Navigator.pop(context);
+    Scrollable.ensureVisible(
+      context,
+      duration: Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
     );
   }
 }

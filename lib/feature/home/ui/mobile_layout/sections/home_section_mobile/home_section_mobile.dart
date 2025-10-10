@@ -9,12 +9,14 @@ import 'package:portfolio/feature/home/ui/desktop_layout/sections/home_section/w
 // import 'package:portfolio/core/utils/app_styles.dart';
 
 class HomeSectionMobile extends StatelessWidget {
-  const HomeSectionMobile({super.key});
-
+  const HomeSectionMobile({super.key, required this.scrollKey});
+final GlobalKey scrollKey ;
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
+    return // SingleChildScrollView(
+     // child: 
+      Padding(
+        key: scrollKey,
         padding: const EdgeInsets.all(19.0),
         child: Column(
           //mainAxisAlignment: MainAxisAlignment.center,
@@ -45,7 +47,7 @@ class HomeSectionMobile extends StatelessWidget {
           ContactMethod(),
           ],
         ),
-      ),
-    );
+      );
+  //  );
   }
 }
