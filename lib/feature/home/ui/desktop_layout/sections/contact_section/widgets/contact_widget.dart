@@ -46,6 +46,7 @@ class ContactWidget extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(width: 15,),
               Expanded(child: SendMessageWidget()),
             ],
           ),

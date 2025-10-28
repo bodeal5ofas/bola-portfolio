@@ -12,25 +12,45 @@ class AppBarDesk extends StatelessWidget {
      spacing: 15,
       children: [
           CustomBarTextButton(title: 'Home', onPressed: () {
-            context.read<DeskProvider>().setCurrentIndex(0);
+              animatescroll(context.read<DeskProvider>().homeKey.currentContext!);
+
+            //context.read<DeskProvider>().setCurrentIndex(0);
            },),
           CustomBarTextButton(title: 'About',onPressed: () {
-            context.read<DeskProvider>().setCurrentIndex(1);
+                          animatescroll(context.read<DeskProvider>().aboutKey.currentContext!);
+
+           // context.read<DeskProvider>().setCurrentIndex(1);
            },),
           CustomBarTextButton(title: 'Skills',onPressed: () {
-            context.read<DeskProvider>().setCurrentIndex(2);
+                          animatescroll(context.read<DeskProvider>().skillsKey.currentContext!);
+
+            // context.read<DeskProvider>().setCurrentIndex(2);
            },),
           CustomBarTextButton(title: 'Service',onPressed: () { 
-           context.read<DeskProvider>().setCurrentIndex(3);
+                          animatescroll(context.read<DeskProvider>().serviceKey.currentContext!);
+
+          //  context.read<DeskProvider>().setCurrentIndex(3);
           },),
           CustomBarTextButton(title: 'Projects',onPressed: () {
-            context.read<DeskProvider>().setCurrentIndex(4);
+                          animatescroll(context.read<DeskProvider>().projectsKey.currentContext!);
+
+            // context.read<DeskProvider>().setCurrentIndex(4);
            },),
           CustomBarTextButton(title: 'Contact',onPressed: () {
-           context.read<DeskProvider>().setCurrentIndex(5);
+                          animatescroll(context.read<DeskProvider>().contactKey.currentContext!);
+
+          //  context.read<DeskProvider>().setCurrentIndex(5);
            },),
 
       ],
+    );
+  }
+   void animatescroll(BuildContext context) {
+       // Navigator.pop(context);
+    Scrollable.ensureVisible(
+      context,
+      duration: Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
     );
   }
 }

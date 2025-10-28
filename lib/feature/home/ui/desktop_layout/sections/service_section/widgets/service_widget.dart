@@ -12,6 +12,7 @@ final bool isMobile;
   @override
   Widget build(BuildContext context) {
     return Container(
+      
       padding: EdgeInsets.all(30),
       decoration: BoxDecoration(
         color: AppColors.lightBackgroundColor,
@@ -19,10 +20,12 @@ final bool isMobile;
         ,border: Border.all(color: AppColors.primaryColor,width: 1.5,),
         
         ),
-        child: Column(children: [
-          Text(title,style: AppStyles.bold20.copyWith(color: Colors.white,fontSize: 16),),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+          Text(title,textAlign: TextAlign.center,style: AppStyles.bold20.copyWith(color: Colors.white,fontSize: 16),),
           SizedBox(height: 30,),
-          Text(subTitle,style: AppStyles.semiBold16.copyWith(color: AppColors.lightGreyColor,fontSize: 14,fontWeight: FontWeight.w500),),
+          Text(subTitle,textAlign: TextAlign.center,style: AppStyles.semiBold16.copyWith(color: AppColors.lightGreyColor,fontSize: 14,fontWeight: FontWeight.w500),),
           SizedBox(height: 30,),
           ElevatedButton(onPressed: (){
          isMobile?     Scrollable.ensureVisible(
@@ -30,8 +33,15 @@ final bool isMobile;
       duration: Duration(milliseconds: 500),
       curve: Curves.easeInOut,
     )
-            :context.read<DeskProvider>().setCurrentIndex(5);
-          }, style: ElevatedButton.styleFrom(backgroundColor: AppColors.primaryColor,),child: Text("Hire Me",style: AppStyles.semiBold16.copyWith(color: Colors.white),),)
+            :Scrollable.ensureVisible(
+      context.read<DeskProvider>().contactKey.currentContext!,
+      duration: Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
+    );
+            
+          }, style: ElevatedButton.styleFrom(backgroundColor: AppColors.primaryColor,),
+          child: Text("Hire Me",style: AppStyles.semiBold16.copyWith(color: Colors.white),),),
+          SizedBox(height: 16,),
         ],),
     );
   }

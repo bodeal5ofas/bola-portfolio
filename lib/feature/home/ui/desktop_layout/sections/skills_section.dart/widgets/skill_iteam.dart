@@ -13,8 +13,10 @@ class SkillIteam extends StatelessWidget {
     //  SizedBox(
     //   height: 70,
     //   child:
-       Column(spacing: 10,children: [
-        Text(skillModel.title,style: AppStyles.semiBold16.copyWith(color: Colors.white),),
+       Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        spacing: 10,children: [
+        Text(skillModel.title,textAlign: TextAlign.center,style: AppStyles.semiBold16.copyWith(color: Colors.white),),
         // icon
         SvgPicture.asset(skillModel.image
         ,fit: BoxFit.fill

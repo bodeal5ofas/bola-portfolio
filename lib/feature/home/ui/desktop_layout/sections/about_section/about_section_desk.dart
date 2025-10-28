@@ -6,13 +6,14 @@ import 'package:portfolio/core/widgets/section_name.dart';
 import 'package:svg_flutter/svg.dart';
 
 class AboutSectionDesk extends StatelessWidget {
-  const AboutSectionDesk({super.key});
-
+  const AboutSectionDesk({super.key, required this.scrollKey});
+final GlobalKey scrollKey ;
   @override
   Widget build(BuildContext context) {
     return //SizedBox(height: MediaQuery.sizeOf(context).height,
      // child:
        Padding(
+        key: scrollKey,
          padding: const EdgeInsets.all(20.0),
          child: Column(
           children: [

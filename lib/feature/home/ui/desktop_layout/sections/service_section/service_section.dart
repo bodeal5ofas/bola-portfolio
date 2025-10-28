@@ -3,18 +3,19 @@ import 'package:portfolio/core/widgets/section_name.dart';
 import 'package:portfolio/feature/home/ui/desktop_layout/sections/service_section/widgets/service_widget.dart';
 
 class ServiceSection extends StatelessWidget {
-  const ServiceSection({super.key});
-
+  const ServiceSection({super.key, required this.scrollKey});
+final GlobalKey scrollKey ;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      key: scrollKey,
+      padding:  EdgeInsets.symmetric(horizontal: MediaQuery.sizeOf(context).width *0.1),
       child: Column(
         spacing: 15,
         children: [
           SectionName(firstnane: 'My', secondname: "Services",),
           Row(
-            spacing: 10,
+            spacing: 24,
             children: [
               Expanded(
                 child: ServiceWidget(title: "Software Engineering", isMobile: false,

@@ -20,7 +20,7 @@ final String title;
       ,),
       child: Column(children: [
         Text(title,
-        style: AppStyles.bold20.copyWith(color: Colors.white,fontSize: 16),),
+        style: AppStyles.bold20.copyWith(color: Colors.white,fontSize: 16,fontWeight: FontWeight.w500),),
       ],),
     );
   }

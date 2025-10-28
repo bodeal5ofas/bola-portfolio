@@ -7,15 +7,20 @@ import 'package:portfolio/feature/home/ui/desktop_layout/sections/contact_sectio
 import 'package:portfolio/feature/home/ui/desktop_layout/sections/contact_section/widgets/contact_widget.dart';
 
 class ContactSection extends StatelessWidget {
-  const ContactSection({super.key});
-
+  const ContactSection({super.key, required this.scrollKey});
+final GlobalKey scrollKey ;
   @override
   Widget build(BuildContext context) {
-    return  Column(children: [
-        SectionName(firstnane: 'Contact', secondname: 'Me',),
-        SizedBox(height: 20,),
-        ContactWidget(),
-      ],);
+    return  Padding(
+    padding:  EdgeInsets.symmetric(horizontal: (MediaQuery.sizeOf(context).width *0.1)),
+      child: Column(
+        key: scrollKey,
+        children: [
+          SectionName(firstnane: 'Contact', secondname: 'Me',),
+          SizedBox(height: 20,),
+          ContactWidget(),
+        ],),
+    );
     
   }
 }

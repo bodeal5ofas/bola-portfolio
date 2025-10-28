@@ -24,7 +24,7 @@ final IconData icon;
       backgroundColor: AppColors.primaryColor,
       radius: 17,
       child: CircleAvatar(
-        backgroundColor: AppColors.lightGreyColor,
+        backgroundColor: AppColors.secondaryColor,
         radius: 15,
         child: Center(
           child: IconButton(

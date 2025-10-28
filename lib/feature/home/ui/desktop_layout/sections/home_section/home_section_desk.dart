@@ -5,11 +5,13 @@ import 'package:portfolio/feature/home/ui/desktop_layout/sections/home_section/w
 import 'package:portfolio/feature/home/ui/desktop_layout/sections/home_section/widgets/home_info_desk.dart';
 
 class HomeSectionDesk extends StatelessWidget {
-  const HomeSectionDesk({super.key});
-
+  const HomeSectionDesk({super.key, required this.scrollKey});
+final GlobalKey scrollKey ;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(height: MediaQuery.sizeOf(context).height,
+    return SizedBox(
+      key: scrollKey,
+      height: MediaQuery.sizeOf(context).height,
     child:Padding(
       padding:  EdgeInsets.only(left: MediaQuery.sizeOf(context).width *0.1),
       child: Row(
