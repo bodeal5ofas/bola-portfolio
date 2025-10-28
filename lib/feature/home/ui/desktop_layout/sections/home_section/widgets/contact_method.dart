@@ -50,12 +50,13 @@ final bool isMobile;
               ),),
 
               TextButton(onPressed: (){
-            isMobile    ?  Scrollable.ensureVisible(
+            //isMobile    ? 
+             Scrollable.ensureVisible(
       context.read<DeskProvider>().contactKey.currentContext!,
       duration: Duration(milliseconds: 500),
       curve: Curves.easeInOut,
-    )
-               : context.read<DeskProvider>().setCurrentIndex(5);
+    );
+             //  : context.read<DeskProvider>().setCurrentIndex(5);
               }, 
               style: TextButton.styleFrom(backgroundColor: AppColors.secondaryColor,
               side:BorderSide(color: AppColors.primaryColor),
